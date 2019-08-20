@@ -104,7 +104,6 @@ public class RunCommandActivity extends Activity {
         String newpath1 = null;
         try {
             newpath1 = createTempfile(this, Uri.parse(filepath));
-            System.out.println(newpath1);
             CommandList = readCommand(newpath1);
             execCommand(CommandList);
         } catch (Exception e) {
@@ -225,8 +224,10 @@ public class RunCommandActivity extends Activity {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(CommandFile));
 
             while ((strLine = bufferedReader.readLine()) != null) {
-                System.out.println(strLine);
                 CommandList.add(strLine);
+                //读到的一行
+//                System.out.println(strLine);
+
             }
             System.out.println("cmd:" + CommandList.toString());
 
