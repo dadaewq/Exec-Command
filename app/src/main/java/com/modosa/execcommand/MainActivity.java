@@ -161,7 +161,7 @@ public class MainActivity extends Activity {
                 if (totallength > meta_Length_CommandInToast) {
                     showToast(getString(R.string.word_execute) + " " + realcmd.substring(0, meta_Length_CommandInToast) + "...", 1);
                 } else {
-                    showToast(getString(R.string.word_execute) + " " + realcmd.substring(0, totallength) + "...", 1);
+                    showToast(getString(R.string.word_execute) + " " + realcmd, 1);
                 }
             }
         } else {
