@@ -25,7 +25,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Method;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -48,9 +50,15 @@ public class RunCommandActivity extends Activity {
                 execCommand(CommandList);
             } else {
                 path = bundle.get("android.intent.extra.STREAM") + "";
+
                 System.out.println(path);
                 if (!"".equals(path)) {
                     if (path.contains("file://")) {
+                        try {
+                            path = URLDecoder.decode(path, "utf-8");
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
                         parseFile(path);
                     } else if (path.contains("content://")) {
                         parseContent(path);
@@ -205,13 +213,19 @@ public class RunCommandActivity extends Activity {
 
     private ArrayList<String> readCommand(String listfilepath) {
         ArrayList<String> CommandList = new ArrayList<>();
+        System.out.println(listfilepath);
         File CommandFile = new File(listfilepath);
         try {
             InputStream is = new FileInputStream(CommandFile);
             String strLine;
 
+//            InputStreamReader isr = new InputStreamReader(new FileInputStream(CommandFile), StandardCharsets.UTF_8);
+//            BufferedReader bufferedReader = new BufferedReader(isr);
+
             BufferedReader bufferedReader = new BufferedReader(new FileReader(CommandFile));
+
             while ((strLine = bufferedReader.readLine()) != null) {
+                System.out.println(strLine);
                 CommandList.add(strLine);
             }
             System.out.println("cmd:" + CommandList.toString());
@@ -231,6 +245,7 @@ public class RunCommandActivity extends Activity {
         File tempFile = new File(context.getExternalCacheDir(), System.currentTimeMillis() + ".txt");
         try {
             Log.e("TAG", context.getContentResolver() + "");
+
             InputStream is = context.getContentResolver().openInputStream(uri);
             Log.e("TAG", is + "");
             if (is != null) {
