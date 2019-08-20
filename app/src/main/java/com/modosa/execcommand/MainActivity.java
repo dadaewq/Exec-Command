@@ -151,7 +151,6 @@ public class MainActivity extends Activity {
 
     private void showcmdToast() {
         int totallength = realcmd.length();
-
         if (meta_isLimitCommandInToast) {
             System.out.println(meta_Length_CommandInToast);
             if (meta_Length_CommandInToast == 0) {
@@ -166,7 +165,7 @@ public class MainActivity extends Activity {
                 }
             }
         } else {
-            showToast(getString(R.string.word_execute) + " " + realcmd.substring(0, totallength) + "...", 1);
+            showToast(getString(R.string.word_execute) + " " + realcmd, 1);
         }
 
     }
