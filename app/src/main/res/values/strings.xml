@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Execute Command</string>
+    <string name="word_execute">Execute</string>
+    <string name="word_executing">Executing</string>
+    <string name="failed_readassets">Failed to read assets file,Please edit manually</string>
+    <string name="run_fromshare">Execute commands in file</string>
+    <string name="shortcut_edit">View the Local command file</string>
+    <string name="shortcut_share">Share the command file content</string>
+    <string name="empty_content">The content read is empty</string>
+    <string name="need_permission">Please grant storage permissions</string>
+    <string name="cannot_parse">Unable to parse</string>
+</resources>
