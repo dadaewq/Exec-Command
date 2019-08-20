@@ -1,5 +1,6 @@
 package com.modosa.execcommand;
 
+
 import android.Manifest;
 import android.app.Activity;
 import android.app.AppOpsManager;
@@ -36,13 +37,13 @@ public class RunCommandActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             Object object = bundle.get("android.intent.extra.TEXT");
             if (object != null) {
                 String cmd = object + "";
-                System.out.println(cmd.length());
-                Log.e("the content read is", cmd);
+                Log.d("the text read is", cmd);
                 CommandList.add(cmd);
                 execCommand(CommandList);
             } else {
@@ -53,16 +54,17 @@ public class RunCommandActivity extends Activity {
                         parseFile(path);
                     } else if (path.contains("content://")) {
                         parseContent(path);
-                    }else {
-                        showToast(getString(R.string.cannot_parse),0);
+                    } else {
+                        showToast(getString(R.string.cannot_parse), 0);
                         finish();
                     }
                 }
             }
         } else {
-            showToast(getString(R.string.cannot_parse),1);
+            showToast(getString(R.string.cannot_parse), 1);
             finish();
         }
+
     }
 
 
@@ -84,7 +86,7 @@ public class RunCommandActivity extends Activity {
             CommandList = readCommand(filepath.replace("file://", ""));
             execCommand(CommandList);
         } else {
-            showToast(getString(R.string.need_permission),0);
+            showToast(getString(R.string.need_permission), 0);
             requestPermission();
         }
 
@@ -103,16 +105,17 @@ public class RunCommandActivity extends Activity {
             deleteSingleFile(newpath1);
         }
     }
+
     private void requestPermission() {
         ActivityCompat.requestPermissions(this,
                 new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                 0x233);
     }
 
-    private void showToast(final String text,int length) {
-        if(length==1) {
+    private void showToast(final String text, int length) {
+        if (length == 1) {
             runOnUiThread(() -> Toast.makeText(this, text, Toast.LENGTH_SHORT).show());
-        }else {
+        } else {
             runOnUiThread(() -> Toast.makeText(this, text, Toast.LENGTH_LONG).show());
         }
     }
@@ -158,7 +161,7 @@ public class RunCommandActivity extends Activity {
     private void execCommand(ArrayList<String> CommandList) {
 
         if (CommandList.isEmpty()) {
-            showToast(getString(R.string.empty_content),1);
+            showToast(getString(R.string.empty_content), 1);
             finish();
         } else {
             String realcmd;
@@ -186,11 +189,11 @@ public class RunCommandActivity extends Activity {
                     DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
                     dataOutputStream.writeBytes(realcmd);
                     dataOutputStream.flush();
-                    showToast(getString(R.string.word_execute) + realcmd,1);
+                    showToast(getString(R.string.word_execute) + " " + realcmd, 1);
                     dataOutputStream.close();
                     outputStream.close();
                 } else {
-                    showToast(getString(R.string.empty_content),1);
+                    showToast(getString(R.string.empty_content), 1);
                 }
 
             } catch (IOException e2) {

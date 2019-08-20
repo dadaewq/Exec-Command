@@ -4,7 +4,7 @@
     <string name="word_execute">执行</string>
     <string name="word_executing">执行中</string>
     <string name="failed_readassets">读取assets文件失败,请手动编辑</string>
-    <string name="run_fromshare">执行文件中的指令</string>
+    <string name="run_fromshare">执行分享的指令</string>
     <string name="shortcut_edit">查看本地指令文件</string>
     <string name="shortcut_share">分享指令文件内容</string>
     <string name="cannot_parse">无法解析</string>

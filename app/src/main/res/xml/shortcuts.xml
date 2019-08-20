@@ -3,24 +3,22 @@
         android:enabled="true"
         android:icon="@mipmap/ic_launcher"
         android:shortcutId="edit_ExternalFile"
-        android:shortcutShortLabel="@string/shortcut_edit"
-        android:shortcutLongLabel="@string/shortcut_edit">
+        android:shortcutLongLabel="@string/shortcut_edit"
+        android:shortcutShortLabel="@string/shortcut_edit">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="com.modosa.execcommand"
             android:targetClass="com.modosa.execcommand.LaunchEditActivity"
-            />
+            android:targetPackage="com.modosa.execcommand" />
     </shortcut>
     <shortcut
         android:enabled="true"
         android:icon="@mipmap/ic_launcher"
         android:shortcutId="share_ExternalFile"
-        android:shortcutShortLabel="@string/shortcut_share"
-        android:shortcutLongLabel="@string/shortcut_share">
+        android:shortcutLongLabel="@string/shortcut_share"
+        android:shortcutShortLabel="@string/shortcut_share">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="com.modosa.execcommand"
             android:targetClass="com.modosa.execcommand.LaunchShareActivity"
-            />
+            android:targetPackage="com.modosa.execcommand" />
     </shortcut>
 </shortcuts>

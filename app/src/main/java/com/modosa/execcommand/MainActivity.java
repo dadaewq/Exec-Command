@@ -28,11 +28,10 @@ public class MainActivity extends Activity {
     private int meta_Length_CommandInToast;
     private boolean meta_isLimitCommandInToast;
 
-    //    private final int default_Length_CommandInToast=40;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        meta_Length_CommandInToast=default_Length_CommandInToast;
+
         ApplicationInfo appInfo = null;
         try {
             appInfo = this.getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
@@ -61,21 +60,22 @@ public class MainActivity extends Activity {
         finish();
     }
 
-    private void showToast(final String text,int length) {
-        if(length==1) {
+    private void showToast(final String text, int length) {
+        if (length == 1) {
             runOnUiThread(() -> Toast.makeText(this, text, Toast.LENGTH_LONG).show());
-        }else {
+        } else {
             runOnUiThread(() -> Toast.makeText(this, text, Toast.LENGTH_SHORT).show());
         }
     }
+
     private void execCommand(ArrayList<String> CommandList) {
-        boolean isfailed=CommandList.toString().contains("读取assets文件失败")||CommandList.toString().contains("Failed to read Assets file");
+        boolean isfailed = CommandList.toString().contains("读取assets文件失败") || CommandList.toString().contains("Failed to read Assets file");
         System.out.println();
         if (CommandList.isEmpty()) {
-            showToast(getString(R.string.empty_content),1);
+            showToast(getString(R.string.empty_content), 1);
             finish();
         } else if (isfailed) {
-            showToast(getString(R.string.failed_readassets)+"\n"+new File(listfilepath).getAbsolutePath(),1);
+            showToast(getString(R.string.failed_readassets) + "\n" + new File(listfilepath).getAbsolutePath(), 1);
             finish();
         } else {
 
@@ -107,7 +107,7 @@ public class MainActivity extends Activity {
                     dataOutputStream.close();
                     outputStream.close();
                 } else {
-                    showToast(getString(R.string.empty_content),1);
+                    showToast(getString(R.string.empty_content), 1);
                 }
 
 
@@ -155,18 +155,18 @@ public class MainActivity extends Activity {
         if (meta_isLimitCommandInToast) {
             System.out.println(meta_Length_CommandInToast);
             if (meta_Length_CommandInToast == 0) {
-                showToast(getString(R.string.word_executing),0);
+                showToast(getString(R.string.word_executing), 0);
             } else if (meta_Length_CommandInToast < 0) {
-                showToast("Toast中显示的指令长度设置错误",0);
+                showToast("Toast中显示的指令长度设置错误", 0);
             } else {
                 if (totallength > meta_Length_CommandInToast) {
-                    showToast(getString(R.string.word_execute)+" "+realcmd.substring(0, meta_Length_CommandInToast) + "...",1);
+                    showToast(getString(R.string.word_execute) + " " + realcmd.substring(0, meta_Length_CommandInToast) + "...", 1);
                 } else {
-                    showToast(getString(R.string.word_execute)+" "+realcmd.substring(0, totallength) + "...",1);
+                    showToast(getString(R.string.word_execute) + " " + realcmd.substring(0, totallength) + "...", 1);
                 }
             }
         } else {
-            showToast(getString(R.string.word_execute)+" "+realcmd.substring(0, totallength) + "...",1);
+            showToast(getString(R.string.word_execute) + " " + realcmd.substring(0, totallength) + "...", 1);
         }
 
     }
@@ -195,7 +195,7 @@ public class MainActivity extends Activity {
                 try {
                     FileOutputStream fos = new FileOutputStream(ExternalCommandFile);
                     fos.write(getString(R.string.failed_readassets).getBytes());
-                    showToast(getString(R.string.failed_readassets)+"\n"+ExternalCommandFile.getAbsolutePath(),1);
+                    showToast(getString(R.string.failed_readassets) + "\n" + ExternalCommandFile.getAbsolutePath(), 1);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

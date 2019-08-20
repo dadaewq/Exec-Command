@@ -24,7 +24,7 @@ public class LaunchEditActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
-        StrictMode.setVmPolicy(builder.build());   //好东西
+        StrictMode.setVmPolicy(builder.build());
 
         //Method
         //builder.detectFileUriExposure();
@@ -100,7 +100,7 @@ public class LaunchEditActivity extends Activity {
                 try {
                     FileOutputStream fos = new FileOutputStream(ExternalCommandFile);
                     fos.write(getString(R.string.failed_readassets).getBytes());
-                    showToast(getString(R.string.failed_readassets)+"\n"+ExternalCommandFile.getAbsolutePath());
+                    showToast(getString(R.string.failed_readassets) + "\n" + ExternalCommandFile.getAbsolutePath());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

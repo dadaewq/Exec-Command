@@ -85,7 +85,7 @@ public class LaunchShareActivity extends Activity {
                 try {
                     FileOutputStream fos = new FileOutputStream(ExternalCommandFile);
                     fos.write(getString(R.string.failed_readassets).getBytes());
-                    showToast(getString(R.string.failed_readassets)+"\n"+ExternalCommandFile.getAbsolutePath());
+                    showToast(getString(R.string.failed_readassets) + "\n" + ExternalCommandFile.getAbsolutePath());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
