@@ -177,7 +177,6 @@ public class MainActivity extends Activity {
             System.out.println("ExternalCommandFile is not exsit start creating");
             try {
                 InputStream is = getResources().getAssets().open(AssetsFilename);
-                System.out.println("hello");
                 FileOutputStream fos = new FileOutputStream(ExternalCommandFile);
 
                 byte[] b = new byte[1024];
