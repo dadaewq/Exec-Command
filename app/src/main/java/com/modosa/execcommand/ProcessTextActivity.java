@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
-public class ProcessTexeActivity extends Activity {
+public class ProcessTextActivity extends Activity {
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
