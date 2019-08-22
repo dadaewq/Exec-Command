@@ -1,18 +1,18 @@
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
     <shortcut
         android:enabled="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@android:drawable/ic_menu_view"
         android:shortcutId="edit_ExternalFile"
         android:shortcutLongLabel="@string/shortcut_edit"
         android:shortcutShortLabel="@string/shortcut_edit">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.modosa.execcommand.LaunchEditActivity"
+            android:targetClass="com.modosa.execcommand.LaunchViewActivity"
             android:targetPackage="com.modosa.execcommand" />
     </shortcut>
     <shortcut
         android:enabled="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@android:drawable/ic_menu_share"
         android:shortcutId="share_ExternalFile"
         android:shortcutLongLabel="@string/shortcut_share"
         android:shortcutShortLabel="@string/shortcut_share">

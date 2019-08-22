@@ -22,7 +22,7 @@
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
         </activity>
-        <activity android:name="com.modosa.execcommand.LaunchEditActivity">
+        <activity android:name="com.modosa.execcommand.LaunchViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,6 +38,7 @@
         </activity>
         <activity
             android:name="com.modosa.execcommand.ProcessTextActivity"
+            android:theme="@android:style/Theme.DeviceDefault.Dialog"
             android:enabled="true"
             android:excludeFromRecents="true"
             android:label="@string/app_name"

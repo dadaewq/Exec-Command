@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
 
-public class LaunchEditActivity extends Activity {
+public class LaunchViewActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
