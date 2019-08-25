@@ -4,10 +4,13 @@
     <string name="word_execute">执行</string>
     <string name="word_executing">执行中</string>
     <string name="failed_readassets">读取assets文件失败,请手动编辑</string>
+    <string name="edit_command">执行指令前先编辑</string>
     <string name="run_fromshare">执行分享的指令</string>
-    <string name="shortcut_edit">查看本地指令文件</string>
-    <string name="shortcut_share">分享指令文件内容</string>
+    <string name="cannot_edit">别编辑这玩意儿</string>
     <string name="cannot_parse">无法解析</string>
     <string name="empty_content">读取的内容为空</string>
     <string name="need_permission">请授予存储权限</string>
+    <string name="shortcut_view">查看本地指令文件</string>
+    <string name="shortcut_execute">执行指令文件内容</string>
+    <string name="shortcut_share">分享指令文件内容</string>
 </resources>

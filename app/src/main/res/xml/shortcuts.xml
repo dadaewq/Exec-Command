@@ -1,24 +1,36 @@
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
     <shortcut
         android:enabled="true"
-        android:icon="@android:drawable/ic_menu_view"
-        android:shortcutId="edit_ExternalFile"
-        android:shortcutLongLabel="@string/shortcut_edit"
-        android:shortcutShortLabel="@string/shortcut_edit">
+        android:icon="@android:drawable/ic_media_play"
+        android:shortcutId="ListExec"
+        android:shortcutLongLabel="@string/shortcut_execute"
+        android:shortcutShortLabel="@string/shortcut_execute">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.modosa.execcommand.LaunchViewActivity"
+            android:targetClass="com.modosa.execcommand.ListExecActivity"
+            android:targetPackage="com.modosa.execcommand" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_view"
+        android:shortcutId="ListView"
+        android:shortcutLongLabel="@string/shortcut_view"
+        android:shortcutShortLabel="@string/shortcut_view">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.modosa.execcommand.ListViewActivity"
             android:targetPackage="com.modosa.execcommand" />
     </shortcut>
     <shortcut
         android:enabled="true"
         android:icon="@android:drawable/ic_menu_share"
-        android:shortcutId="share_ExternalFile"
+        android:shortcutId="ListShare"
         android:shortcutLongLabel="@string/shortcut_share"
         android:shortcutShortLabel="@string/shortcut_share">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.modosa.execcommand.LaunchShareActivity"
+            android:targetClass="com.modosa.execcommand.ListShareActivity"
             android:targetPackage="com.modosa.execcommand" />
     </shortcut>
+
 </shortcuts>

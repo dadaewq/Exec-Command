@@ -4,10 +4,13 @@
     <string name="word_execute">Execute</string>
     <string name="word_executing">Executing</string>
     <string name="failed_readassets">Failed to read assets file,Please edit manually</string>
+    <string name="edit_command">Edit commands before executing </string>
     <string name="run_fromshare">Execute the shared commands</string>
-    <string name="shortcut_edit">View the Local command file</string>
-    <string name="shortcut_share">Share the command file content</string>
+    <string name="cannot_edit">Do not edit it</string>
     <string name="empty_content">The content read is empty</string>
     <string name="need_permission">Please grant storage permissions</string>
     <string name="cannot_parse">Unable to parse</string>
+    <string name="shortcut_view">View the Local command file</string>
+    <string name="shortcut_execute">Execute commands in the file</string>
+    <string name="shortcut_share">Share the command file content</string>
 </resources>
