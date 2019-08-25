@@ -17,7 +17,7 @@ public class ListShareActivity extends Activity {
         ArrayList<String> CommandList = new CommandUtil(this).readCommand(listfilepath);
 
         Intent intent = new Intent();
-        intent.setAction("android.intent.action.SEND");
+        intent.setAction(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_TEXT, CommandList.toString().replace("[", "").replace("]", ""));
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

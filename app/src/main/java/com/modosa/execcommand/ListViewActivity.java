@@ -24,7 +24,7 @@ public class ListViewActivity extends Activity {
         String listfilepath = new CommandUtil(this).init();
 
         Intent intent = new Intent();
-        intent.setAction("android.intent.action.VIEW");
+        intent.setAction(Intent.ACTION_VIEW);
 
         /*
          *
