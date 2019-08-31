@@ -4,7 +4,8 @@
     <string name="word_execute">Execute</string>
     <string name="word_executing">Executing</string>
     <string name="failed_readassets">Failed to read assets file,Please edit manually</string>
-    <string name="edit_command">Edit commands before executing </string>
+    <string name="edit_command">Edit commands</string>
+    <string name="launch_brevent">Edit commands(In Brevent)</string>
     <string name="run_fromshare">Execute the shared commands</string>
     <string name="cannot_edit">Do not edit it</string>
     <string name="empty_content">The content read is empty</string>

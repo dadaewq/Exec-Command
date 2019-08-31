@@ -4,7 +4,8 @@
     <string name="word_execute">执行</string>
     <string name="word_executing">执行中</string>
     <string name="failed_readassets">读取assets文件失败,请手动编辑</string>
-    <string name="edit_command">执行指令前先编辑</string>
+    <string name="edit_command">编辑指令</string>
+    <string name="launch_brevent">编辑指令(黑阈)</string>
     <string name="run_fromshare">执行分享的指令</string>
     <string name="cannot_edit">别编辑这玩意儿</string>
     <string name="cannot_parse">无法解析</string>
